@@ -1,6 +1,6 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: marketplaceContract
@@ -18,7 +18,7 @@ dataSources:
         - RoleRevoked
       abis:
         - name: marketplaceContract
-          file: ./abis/marketplaceContract.json
+          file: marketplaceContract\abis\marketplaceContract.json
       eventHandlers:
         - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
           handler: handleRoleAdminChanged
@@ -26,4 +26,4 @@ dataSources:
           handler: handleRoleGranted
         - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
           handler: handleRoleRevoked
-      file: ./src/marketplace-contract.ts
+      file: marketplaceContract\marketplaceContract.wasm
